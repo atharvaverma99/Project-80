@@ -1,0 +1,113 @@
+<html>
+<head>
+    <title>Class80</title>
+</head>
+<body>
+    <center>
+    <h1>Make Paragraphs using join function</h1>
+        <div  class="row">
+        <div class="column" >
+    
+        <span>1. </span>
+        <input type="text" id="box1">
+        <br>
+        <br>
+        <span>2. </span>
+        <input type="text" id="box2">
+        <br>
+        <br>
+        <span>3. </span>
+        <input type="text" id="box3">
+        <br>
+        <br>
+        <span>4. </span>
+        <input type="text" id="box4">
+        <br>
+        <br>
+        <span>5. </span>
+        <input type="text" id="box5">
+        <br>
+        <br>
+        <span>6. </span>
+        <input type="text" id="box6">
+        <br>
+        <br>  
+        <button onclick="getParagraph1()">Get Paragraph 1</button>
+    </div>
+    <div class="column">
+        <span>1.</span>
+        <input type="text" id="para2_box1">
+        <br>
+        <br>
+        <span>2.</span>
+        <input type="text" id="para2_box2">
+        <br>
+        <br>
+        <span>3.</span>
+        <input type="text" id="para2_box3">
+        <br>
+        <br>
+        <span>4.</span>
+        <input type="text" id="para2_box4">
+        <br>
+        <br>
+        <span>5.</span>
+        <input type="text" id="para2_box5">
+        <br>
+        <br>
+        <span>6.</span>
+        <input type="text" id="para2_box6">
+        <br>
+        <br>
+        <button onclick="getParagraph2()">Get paragraph 2</button>
+    </div>
+</div>
+<div style="text-align: left;">
+    <p id="showparagraph1"></p>
+    <p id="showparagraph2"></p>
+</div>
+</center>
+<style>
+    * {
+    box-sizing: border-box;
+    }
+    .column {
+        float: left;
+        width: 49%;
+        padding: 5px;
+    }
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+<script>
+    var  paragraph_1 = [];
+var  paragraph_2 = [];
+
+function getParagraph1() {
+    for(var i = 1; i <= 6; i++)
+    {
+        if((document.getElementById("box"+i).value)!="")
+        {
+            paragraph_1.push(document.getElementById("box" + i).value);
+            paragraph_1.join(". ");
+            document.getElementById("showparagraph1").innerHTML = paragraph_1.join(". ");
+        }
+    }
+    
+}
+function getParagraph2() {
+    for(var k = 1; k <= 6; k++)
+    {
+        if((document.getElementById("para2_box"+k).value)!="")
+        {
+            paragraph_2.push(document.getElementById("para2_box" + k).value);
+            paragraph_2.join(". ");
+            document.getElementById("showparagraph2").innerHTML = paragraph_2.join(". ");
+        }
+    }
+}
+</script>
+</html>
